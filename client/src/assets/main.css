@@ -1,0 +1,878 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f8f8;
+  font-family: "Inter", sans-serif;
+  color: #222;
+}
+
+.card {
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+  box-shadow: none;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #111;
+}
+
+.card-text {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1%;
+  color: #111;
+}
+
+.table {
+  font-size: 0.85rem;
+}
+
+.table-dark {
+  background-color: #111 !important;
+}
+
+input.form-control,
+textarea.form-control {
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 0.85rem;
+}
+
+input.form-control:focus,
+textarea.form-control:focus {
+  border-color: #111;
+  box-shadow: none;
+}
+
+.alert {
+  border-radius: 0;
+  font-size: 0.85rem;
+}
+
+/* NAVBAR COMPONENT START ---------------------------------------------*/
+.navbar {
+  background-color: white;
+  padding: 1rem 2rem;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.122) !important;
+
+  position: relative;
+
+  z-index: 1050;
+}
+
+.navbar-brand {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #000000 !important;
+  text-transform: uppercase;
+  letter-spacing: -3%;
+}
+
+.navbar-brand b {
+  color: #009124;
+  font-weight: 900;
+}
+
+.nav-link {
+  color: #191919 !important;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  transition:
+    color 0.2s ease,
+    font-weight 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #009124 !important;
+  font-weight: 800;
+
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}
+
+.navbar-nav.position-absolute {
+  top: 25%;
+  transform: translate(-50%, -50%);
+}
+/* NAVBAR COMPONENT END --------------------------------------------- */
+
+/* HOME PAGE START---------------------------------------------- */
+
+.home {
+  font-family: "Inter", sans-serif;
+  background: #ffffff;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+}
+
+.hero_container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero_content {
+  margin-top: -5%;
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-img-left,
+.hero-img-right {
+  position: absolute;
+  z-index: 1;
+  display: none;
+  height: auto;
+}
+
+@media (min-width: 992px) {
+  .hero-img-left,
+  .hero-img-right {
+    display: block;
+  }
+}
+
+.hero-img-left {
+  left: -10px;
+  bottom: 110px;
+  width: 300px;
+  transform: rotate(5deg);
+}
+
+.hero-img-right {
+  right: -80px;
+  bottom: 180px;
+  width: 30%;
+  transform: scaleX(-1);
+}
+
+.hero_title {
+  font-size: clamp(4.5rem, 5vw, 5rem);
+  font-weight: 600;
+  color: #211f1f;
+  line-height: 1.1;
+  letter-spacing: -5%;
+  margin-bottom: 2rem;
+  white-space: nowrap;
+}
+
+.hero_title--green {
+  color: #009124;
+  font-weight: 650;
+}
+
+.hero_sub {
+  color: #211f1f;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+}
+
+.hero_btn {
+  display: inline-block;
+  background: #111111;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 1rem 3rem;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+.hero_btn:hover {
+  background: #009124;
+  color: #fff;
+}
+
+.filter-bar {
+  padding: 1.5rem 0;
+}
+.filter-bar_inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e6e6e6;
+  border-radius: 10px;
+  padding: 1.5rem 1.5rem;
+}
+.filter-bar_left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.filter-bar_right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-label {
+  font-size: 0.88rem;
+  color: #000000;
+  font-weight: 500;
+}
+.filter-page {
+  font-size: 0.88rem;
+  color: #009124;
+  font-weight: 400;
+}
+
+.filter-pill {
+  background: none;
+  border: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #374151;
+  padding: 0.35rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+.filter-pill--active {
+  background: #009124;
+  color: #ffffff;
+}
+
+.products-section {
+  padding: 1rem 0 3rem;
+}
+
+.products-section_title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #009124;
+  margin-bottom: 2.5rem;
+  margin-top: 2rem;
+  letter-spacing: -0.5px;
+}
+
+.product-card {
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.product-card:hover {
+  transform: translateY(-3px);
+}
+
+.product-card_img-wrap {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+.product-card_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card_category {
+  display: block;
+  font-size: 0.72rem;
+  color: #9ca3af;
+  margin-bottom: 0.2rem;
+}
+.product-card_name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #111111;
+  margin: 0 0 0.2rem;
+  line-height: 1.3;
+}
+.product-card_price {
+  font-size: 0.85rem;
+  color: #374151;
+  margin: 0;
+}
+
+.home-footer {
+  background: #111111;
+  color: #9ca3af;
+  padding: 1.5rem 0;
+  font-size: 0.85rem;
+}
+/* HOME PAGE END ----------------------------------------------- */
+
+/* LOGIN PAGE START ------------------------------------------ */
+.login-page-wrapper {
+  overflow: hidden;
+  background-color: #ffffff;
+  height: 90vh;
+}
+
+.login-title {
+  margin-top: -50px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 1%;
+  text-transform: none;
+  font-size: 2.5rem;
+  color: #000000;
+}
+
+.form-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.custom-card {
+  background-color: #ffffff;
+  border: 1px solid #00000015;
+  border-radius: 12px;
+  z-index: 1000;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.263);
+}
+
+.submit-btn {
+  background-color: #009124;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 145, 36, 0.2);
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #00751c;
+  color: white;
+}
+
+.account-prompt {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* cloth png */
+.bg-png1 {
+  position: absolute;
+  bottom: -30%;
+  left: 5%;
+  width: 35vw;
+  max-width: 800px;
+  transform: rotate(-30deg);
+  transform-origin: bottom left;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bg-png1 img {
+  width: 110%;
+  height: auto;
+  display: block;
+}
+/* cloth png end*/
+
+/* shoe png */
+.bg-png2 {
+  position: absolute;
+  bottom: 13%;
+  right: 0.5%;
+  width: 32vw;
+  max-width: 380px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bg-png2 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* shoe png end*/
+
+@media (max-width: 1200px) {
+  /* Shrink sizes slightly early on mid-sized laptops to prevent card clipping */
+  .bg-png1 {
+    width: 30vw;
+    bottom: -20%;
+  }
+  .bg-png2 {
+    width: 28vw;
+    bottom: 15%;
+  }
+}
+
+@media (max-width: 992px) {
+  /* Push them even further out / make them smaller on tablets */
+  .bg-png1 {
+    width: 25vw;
+    left: -5%;
+  }
+  .bg-png2 {
+    width: 22vw;
+    right: -5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .bg-png1,
+  .bg-png2 {
+    display: none;
+  }
+}
+
+/* Login Button Start */
+.navbar-nav .nav-login {
+  color: #211f1f !important;
+  padding: 8px 30px !important;
+  letter-spacing: 1%;
+  font-family: "Inter", sans-serif;
+  border-radius: 6px;
+  border: 1px solid #211f1f;
+  text-decoration: none !important;
+  font-weight: bold;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.navbar-nav .nav-login:hover {
+  background-color: #009124;
+  border: 1px solid #009124;
+  color: #ffffff !important;
+}
+/* Login Button End */
+
+/* Logout Button Start*/
+.navbar-nav .nav-logout {
+  color: #211f1f !important;
+  padding: 8px 20px !important;
+  border-radius: 6px;
+  border: 1px solid #211f1f;
+  text-decoration: none !important;
+  font-weight: bold;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.navbar-nav .nav-logout:hover {
+  background-color: #c10518;
+  border: 1px solid #c10518;
+  color: #ffffff !important;
+}
+/* Logout Button End*/
+/* LOGIN PAGE END ---------------------------------------------------- */
+
+/* REGISTER PAGE START */
+.register-page-wrapper {
+  overflow: hidden;
+  background-color: #ffffff;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-title {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #000000;
+}
+
+.col-11 {
+  position: relative;
+  z-index: 10;
+}
+
+/* PRODUCTS PAGE START ------------------------------------------------------- */
+.product-title {
+  font-size: 2.5rem;
+  padding-bottom: 2%;
+  padding-top: 3%;
+}
+
+.product-card {
+  border-radius: 10px;
+}
+
+.product-name {
+  background-color: #009124;
+  color: white;
+  padding: 3% 0%;
+}
+
+.custom-price-text {
+  color: #211f1f;
+}
+
+.detail-btn {
+  background-color: #009124;
+  color: white;
+  border-radius: 5px;
+}
+
+.detail-btn:hover {
+  background-color: #006c1b;
+  color: white;
+  border-radius: 5px;
+}
+
+/* ADMIN DASHBOARD STYLES START  */
+.dashboard-title {
+  font-size: 2.5rem;
+}
+
+.add-product-btn {
+  background-color: #009124;
+  border: 1.5px solid #009124;
+  color: white;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  padding: 0.6rem 1.2rem;
+}
+
+.add-product-btn:hover {
+  background-color: #006219;
+  border: 1.5px solid #006219;
+  color: white;
+}
+
+.order-btn {
+  background-color: #0080ff;
+  border: 1.5px solid #0080ff;
+  color: white;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  padding: 0.6rem 1.2rem;
+}
+
+.order-btn:hover {
+  background-color: #005fbe;
+  border: 1.5px solid #005fbe;
+  color: white;
+}
+
+.table-container {
+  margin-top: 50px;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #dee2e6;
+}
+
+.table-container th:first-child {
+  border-top-left-radius: 12px;
+}
+.table-container th:last-child {
+  border-top-right-radius: 12px;
+}
+.table-container tr:last-child td:first-child {
+  border-bottom-left-radius: 12px;
+}
+.table-container tr:last-child td:last-child {
+  border-bottom-right-radius: 12px;
+}
+
+.table.custom-table th {
+  background-color: #211f1f;
+  color: #ffffff;
+  padding: 1rem;
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table.custom-table td {
+  vertical-align: middle;
+  padding: 1rem;
+}
+
+.action-cell {
+  white-space: nowrap;
+  width: 1%;
+  text-align: center;
+}
+
+.action-cell .btn {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 2px;
+  padding: 5px 10px;
+}
+
+.update-btn {
+  background-color: #0080ff !important;
+  color: white !important;
+  border: none;
+  border-radius: 5px;
+}
+.update-btn:hover {
+  background-color: #005fbe !important;
+}
+
+.activate-btn {
+  background-color: #009124 !important;
+  color: white !important;
+  border: none;
+  border-radius: 5px;
+}
+
+.activate-btn:hover {
+  background-color: #006c1b !important;
+}
+
+.disable-btn {
+  background-color: #e6071d !important;
+  color: white !important;
+  border: none;
+  border-radius: 5px;
+}
+.disable-btn:hover {
+  background-color: #c10518 !important;
+}
+
+/* ADMIN DASHBOARD STYLES END  */
+
+/* PRODUCTS PAGE END ------------------------------------------------------- */
+
+/* ABOUT PAGE START--------------------------------------------------------- */
+.about-page {
+  background-color: #ffffff;
+  font-family: "Inter", sans-serif;
+  color: #111;
+}
+
+/* Hero */
+.about-hero {
+  padding: 5rem 0 4rem;
+}
+
+.about-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #009124;
+  margin-bottom: 1rem;
+}
+
+.about-heading {
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 200;
+  line-height: 1;
+  margin-bottom: 2rem;
+  color: #111;
+}
+
+.about-brand {
+  font-weight: 900;
+  color: #111; /* rest of SOUL is black */
+}
+
+.about-brand-accent {
+  color: #009124; /* only U is green */
+}
+
+.about-description {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+  max-width: 620px;
+}
+
+.about-year-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0;
+}
+
+.about-year {
+  font-size: 0.78rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+.about-year-num {
+  font-size: 6rem;
+  font-weight: 900;
+  color: #e7efe9;
+  line-height: 1;
+  letter-spacing: -4px;
+}
+
+/* Divider */
+.about-divider {
+  border-top: 1px solid #e5e5e5;
+  margin: 0 1.5rem;
+}
+
+/* Values */
+.about-values {
+  padding: 5rem 0;
+}
+
+.section-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #009124;
+}
+
+.value-item {
+  padding: 0 3rem 2rem 0;
+}
+
+.value-number {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ccc;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.value-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.75rem;
+}
+
+.value-text {
+  font-size: 0.88rem;
+  color: #666;
+  line-height: 1.75;
+}
+
+/* Team */
+.about-team {
+  padding: 5rem 0;
+}
+
+.team-card {
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 2rem 1.5rem;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+.team-card:hover {
+  border-color: #009124;
+  transform: translateY(-3px);
+}
+
+.team-card_avatar {
+  width: 52px;
+  height: 52px;
+  background-color: #111;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.team-card_name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.2rem;
+}
+
+.team-card_role {
+  font-size: 0.8rem;
+  color: #888;
+  margin: 0;
+}
+
+/* CTA */
+.about-cta {
+  padding: 5rem 0;
+  background-color: #111;
+  margin-top: 0;
+}
+
+.cta-heading {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.cta-sub {
+  font-size: 0.9rem;
+  color: #888;
+  margin: 0;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: #009124;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.cta-btn:hover {
+  background: #00751c;
+  color: #fff;
+}
+/* ABOUT PAGE END ------------------------------------------------------------ */
+
+/* FOOTER SECTION START ---------------------------------------------*/
+.home-footer {
+  background: #211f1f;
+  color: #ffffff;
+  padding: 1.5rem 0;
+  font-size: 0.85rem;
+}
+/* FOOTER SECTION END -------------------------------------------- */
