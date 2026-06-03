@@ -93,6 +93,14 @@ textarea.form-control:focus {
   font-weight: 900;
 }
 
+.navbar-brand .logo-icon {
+  height: 1.01em;
+  vertical-align: middle;
+  margin: 0 -4px;
+  position: relative;
+  top: -5px; /* nudge UP — increase if still too low */
+}
+
 .nav-link {
   color: #191919 !important;
   font-size: 0.85rem;

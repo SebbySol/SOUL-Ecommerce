@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg custom-navbar">
         <div class="container position-relative d-flex align-items-center">
             
-            <a class="navbar-brand" href="/">SO<b>U</b>L</a>
+            <a class="navbar-brand" href="/">S<img src="/logodark.png" alt="O" class="logo-icon" /><b>U</b>L</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
