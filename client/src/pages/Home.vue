@@ -81,12 +81,10 @@
             <div class="product-card" @click="goToProduct(product._id)">
               <div class="product-card_img-wrap">
                 <img
-                  :src="
-                    shoeImages[products.indexOf(product) % shoeImages.length]
-                  "
-                  :alt="product.name"
-                  class="product-card_img"
-                />
+                    :src="product.image || shoeImages[products.indexOf(product) % shoeImages.length]"
+                    :alt="product.name"
+                    class="product-card_img"
+                  />
               </div>
 
               <div class="product-card_info">

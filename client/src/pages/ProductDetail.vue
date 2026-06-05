@@ -16,10 +16,16 @@
         <!-- Product -->
         <div v-else-if="product" class="detail-layout">
 
-            <!-- Left: Image placeholder -->
+            <!-- Left: Image panel -->
             <div class="detail-image-panel">
                 <div class="detail-image-placeholder">
-                    <span class="detail-image-label">SOUL</span>
+                    <img
+                        v-if="product.image"
+                        :src="product.image"
+                        :alt="product.name"
+                        class="detail-image"
+                    />
+                    <span v-else class="detail-image-label">SOUL</span>
                 </div>
                 <button class="detail-back" @click="router.push({ name: 'Products' })">
                     ← Back to Products
@@ -144,6 +150,13 @@ onMounted(() => fetchProduct())
     }
 
     /* Left panel */
+    .detail-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
     .detail-image-panel {
         width: 50%;
         background: #111;

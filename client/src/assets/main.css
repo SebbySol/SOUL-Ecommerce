@@ -578,9 +578,22 @@ textarea.form-control:focus {
   color: white;
 }
 
+.btn-custom-back{
+    background-color: #111111;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.btn-custom-back:hover {
+    background-color: #333333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
 .order-btn {
-  background-color: #0080ff;
-  border: 1.5px solid #0080ff;
+  background-color: #000000;
+  border: 1.5px solid transparent;
   color: white;
   border-radius: 5px;
   text-transform: uppercase;
@@ -590,9 +603,21 @@ textarea.form-control:focus {
 }
 
 .order-btn:hover {
-  background-color: #005fbe;
-  border: 1.5px solid #005fbe;
+  background-color: #272727;
+  border: 1.5px solid transparent;
   color: white;
+}
+
+.productName-cell{
+  max-width: 40vw;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.description-cell{
+  max-width: 40vw;
+  font-size: 0.85rem;
+  font-weight: 300;
 }
 
 .table-container {

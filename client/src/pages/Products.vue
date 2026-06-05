@@ -10,7 +10,7 @@
           Add Product
         </button>
         <button class="btn order-btn" @click="router.push({ name: 'Orders' })">
-          Orders
+          See Orders
         </button>
       </div>
 
@@ -25,20 +25,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="product in products" :key="product._id">
-            <td>{{ product.name }}</td>
-            <td>{{ product.description }}</td>
-            <td>{{ product.price }}</td>
+          <tr class="align-middle" v-for="product in products" :key="product._id">
+            <td class="productName-cell text-center">{{ product.name }}</td>
+            <td class="description-cell">{{ product.description }}</td>
+            <td>Php {{ product.price }}</td>
             <td>{{ product.isActive ? "Available" : "Unavailable" }}</td>
             <td class="action-cell">
               <button
                 class="btn btn-sm me-1 update-btn"
-                @click="
-                  router.push({
-                    name: 'UpdateProduct',
-                    params: { id: product._id },
-                  })
-                "
+                @click="router.push({ name: 'UpdateProduct', params: { id: product._id } })"
               >
                 Update
               </button>
@@ -78,6 +73,17 @@
       <div v-else class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
         <div class="col" v-for="product in products" :key="product._id">
           <div class="card product-card h-100 shadow-sm">
+
+            <img
+              v-if="product.image"
+              :src="product.image"
+              :alt="product.name"
+              class="card-img-top product-img"
+            />
+            <div class="card-img-placeholder" v-else>
+              <span>SOUL</span>
+            </div>
+
             <div class="card-body d-flex flex-column">
               <h5 class="card-title text-center">{{ product.name }}</h5>
               <p class="card-text text-muted flex-grow-1">
